@@ -29,6 +29,7 @@ Why Fork?
 
 How to build?
   Once you have Bluez 5.45 configured and building, you can then just insert this into the ./tools/ directory.
+  I'm working on a patch to allow you to modify the Makefile.am, then run autogen.sh
 
 Bluez 5.45 configure;
   ./configure --enable-library --enable-manpages --enable-deprecated --disable-obex --enable-experimental --enable-test --disable-silent-rules

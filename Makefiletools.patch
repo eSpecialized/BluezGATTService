@@ -1,0 +1,22 @@
+--- Makefile.tools	2017-06-30 17:32:49.312000000 -0700
++++ MakefileNEW.tools	2017-06-30 17:35:42.900000000 -0700
+@@ -169,7 +169,8 @@
+ 			tools/eddystone tools/ibeacon \
+ 			tools/btgatt-client tools/btgatt-server \
+ 			tools/test-runner tools/check-selftest \
+-			tools/gatt-service profiles/iap/iapd
++			tools/gatt-service profiles/iap/iapd \
++			tools/gatt-svc
+ 
+ tools_bdaddr_SOURCES = tools/bdaddr.c src/oui.h src/oui.c
+ tools_bdaddr_LDADD = lib/libbluetooth-internal.la @UDEV_LIBS@
+@@ -262,6 +263,9 @@
+ tools_gatt_service_SOURCES = tools/gatt-service.c
+ tools_gatt_service_LDADD = @GLIB_LIBS@ @DBUS_LIBS@ gdbus/libgdbus-internal.la
+ 
++tools_gatt_svc_SOURCES = tools/gatt-svc.c
++tools_gatt_svc_LDADD = @GLIB_LIBS@ @DBUS_LIBS@ gdbus/libgdbus-internal.la -lpthread
++
+ profiles_iap_iapd_SOURCES = profiles/iap/main.c
+ profiles_iap_iapd_LDADD = gdbus/libgdbus-internal.la @GLIB_LIBS@ @DBUS_LIBS@
+ 
